@@ -34,4 +34,11 @@ const router = new VueRouter({
   routes
 })
 
+let dataLayer = window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+router.afterEach((to) => {
+  console.log(to.path)
+  gtag('config', 'G-P1ZLFB7PL2', {'page_path': to.path});
+})
+
 export default router
