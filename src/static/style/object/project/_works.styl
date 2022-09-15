@@ -1,0 +1,52 @@
+.p-works {
+  &__content {
+    cons();
+    padding-top: 100px;
+  }
+  &__head{
+    h-prim();
+    font-weight: bold;
+  }
+  &__catlegend{
+    display: block;
+    color: $color.blue;
+    border-bottom: 1px solid $color.blue ;
+  }
+  &__cats{
+    margin-top: 5px;
+    > li {
+      display: inline-block;
+      margin: 5px;
+    }
+    input {
+      display: none;
+    }
+    span {
+      border: 1px solid $color.gray;
+      padding: 10px;
+      width: 100px;
+      display: inline-block;
+      text-align: center;
+      transition: .8s $easeInOut
+      &:hover {
+        transition: .2s $easeInOut
+        background: lighten($color.blue,95%);
+      }
+    }
+    input:checked + span {
+      transition: .2s $easeInOut
+      background: lighten($color.blue,80%);
+    }
+  }
+  &__workslist {
+    margin-top: 20px;
+  }
+  +pc() {
+    &__cat {
+      span {
+        padding: 7px;
+        width: 70px;
+      }
+    }
+  }
+}

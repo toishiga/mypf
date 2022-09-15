@@ -1,0 +1,64 @@
+// fontsize px to rem
+// if rootfontsize is 100%
+remfy($size){
+  $unit=unit($size)
+  if ($unit is 'px'){
+    return unit($size / 16, 'rem')
+  } else {
+    return unit($size, $unit)
+  }
+}
+
+get($hash, $key) {
+    return $pair[1] if $pair[0] == $key for $pair in $hash
+}
+
+map-get($hash, $key) {
+  return $hash.$key
+}
+
+sort($list, fn = null) {
+  if (fn == null) {
+    // 第二引数の関数 無名関数には引数の前に@が必要
+    fn = @($a, $b) {
+      $a > $b
+    }
+  }
+
+  // bubble sort
+  for $i in 1..length($list) - 1 {
+    for $j in 0..$i - 1 {
+      if fn($list[$j], $list[$i]){
+        $temp = $list[$i]
+        $list[$i] = $list[$j]
+        $list[$j] = $temp
+      }
+    }
+  }
+  return $list
+}
+/* usage
+  sort('e' 'c' 'f' 'a' 'b' 'd')
+  => 'a' 'b' 'c' 'd' 'e' 'f'
+
+  sort(5 3 6 1 2 4, @(a, b){
+    a < b
+  })
+  => 6 5 4 3 2 1
+*/
+
+/*
+ Return greatest common divisor
+
+ @param   int  a  The number to be divided
+ @param   int  b  The number to divide
+ @return  int  The number of the remainder
+
+*/
+gcd(a, b) {
+  if (b == 0) {
+    return a;
+  }
+  return _gcd(b, a % b);
+}
+

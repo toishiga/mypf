@@ -1,0 +1,152 @@
+.c-modal {
+  &__tit {
+    border-bottom: 1px solid $color.text;
+    font-size: 2rem;
+    line-height: 1.2;
+    font-weight: bold;
+  }
+  &__url {
+    font-family: anton;
+    color: $color.lgray;
+    font-size: 1.2rem;
+  }
+  &__c {
+    margin-top: 10px;
+  }
+  &__cattit {
+    border-bottom: 1px solid $color.gray; 
+    color: $color.gray
+  }
+  &__cat {
+    btn();
+    btn-cat();
+  }
+  &__desc {
+  }
+  &__desctit {
+    border-bottom: 1px solid $color.gray; 
+    color: $color.gray
+  }
+  &__comment {
+    margin-top: 2px;
+  }
+  &__img {
+    margin-top: 20px;
+  }
+  &__closebtnwrap {
+    margin-top: 25px;
+    text-align: right;
+  }
+  &__closebtn {
+    // btn();
+    // btn-prim();
+    navbtn();
+    navbtnX();
+    position absolute;
+    top: 10px;
+    right: 10px;
+    background-color: rgba(white,.6);
+    text-indent: 9999px;
+    transition: all .6s $easeInOut;
+    &:hover {
+      transition: all .2s $easeInOut;
+      background-color: white
+      }
+  }
+  &__movebtn {
+    top: 0;
+    right: 0;
+    left: 0;
+    z-index :99999;
+  }
+  &__prevbtn {
+    navbtn()
+    navbtnprev()
+    position: absolute;
+    top: 50vh;
+    left: 10px;
+    background-color: rgba(white,.6);
+    transition: all .6s $easeInOut;
+    text-indent: 9999px;
+    &:hover {
+      transition: all .2s $easeInOut;
+      background-color: white
+      }
+    &:hover {
+
+      }
+  }
+  &__nextbtn {
+    navbtn()
+    navbtnnext()
+    position: absolute;
+    top: 50vh;
+    right: 10px;
+    background-color: rgba(white,.6);
+    transition: all .6s $easeInOut;
+    text-indent: 9999px;
+    &:hover {
+      transition: all .2s $easeInOut;
+      background-color: white
+      }
+  }
+  &__overlay {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: fixed;
+    z-index: 9999;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, .7);
+    backdrop-filter: blur(4px);
+  }
+
+  &__window {
+    margin: auto;
+    background: #fff;
+    
+    width: 80%;
+    max-width: 640px;
+    max-height: 100%;
+    overflow-y: scroll;
+  }
+
+  &__content {
+    padding:  20px;
+  }
+  +pc() {
+    &__body {
+      display: flex;
+      justify-content: frex-end;
+      flex-direction: row-reverse;
+    }
+    &__c,
+    &__img {
+      width: 50%;
+      margin-left: 10px;
+    }
+  }
+}
+
+.modal-enter-active, .modal-leave-active {
+  transition: opacity 0.4s;
+
+  .modal-window {
+    transition: opacity 0.4s, transform 0.4s;
+  }
+}
+
+.modal-leave-active {
+  transition: opacity 0.6s ease 0.4s;
+}
+
+.modal-enter, .modal-leave-to {
+  opacity: 0;
+  .modal-window {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+}

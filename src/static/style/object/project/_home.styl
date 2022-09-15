@@ -1,0 +1,76 @@
+.p-home {
+  &__content {
+    cons();
+    padding-top: 100px;
+  }
+  &__logo{
+    font-family: Anton;
+    font-size: 80px;
+  }
+  &__navlink{
+    margin-top: 100px;
+    li{
+      display: block;
+      margin: 20px 10px 0 0;
+      &:has(.router-link-exact-active){
+        display: none;
+      }
+    }
+    a {
+      btn();
+      btn-prim();
+      width: 200px;
+      text-align: center;
+      margin: 0 auto;
+      display: block;
+    }
+  }
+  @keyframes logo-in {
+    0% {
+      transform: translate(500%,0)
+      opacity:0;
+    } 
+  }
+  &__logoitem {
+    display: inline-block;
+    min-width : .3em;
+    animation: logo-in .8s $easeII 0s backwards;
+  }
+  for i in 0 .. 4 {
+    &__delay:nth-child({i + 1}) {
+      animation-delay: i * 100ms + 200ms;
+    }
+  }
+
+  @keyframes descs {
+    0% {
+      transform: translate(0,100%)
+      opacity :0;
+    } 
+  }
+  &__desc {
+    display: flex;
+    overflow: hidden;
+  }
+  &__descitem {
+    display: block;
+    min-width .3em;
+    animation: descs .5s $easeII 0s backwards;
+  }
+  for i in 0 .. 38 {
+    &__delaydesc1:nth-child( {i + 1} ) {
+      animation-delay: i * 25ms + 200ms;
+    }
+  }
+  for i in 0 .. 24 {
+    &__delaydesc2:nth-child( {i + 1} ) {
+      animation-delay: (i + 20) * 25ms + 200ms;
+    }
+  }
+  +pc() {
+    &__navlink {
+      cent(300px);
+      margin: 0;
+    }
+  }
+}

@@ -1,0 +1,19 @@
+.c-workslist {
+  &__works {
+    display: flex;
+    flex-wrap: wrap;
+  }
+  &__worksitem {
+    width: calc(50% - 5px);
+    margin-top: 5px;
+    margin-left: 5px;
+    
+    border: 1px solid rgba($color.pred,.5);
+    padding: 10px
+  }
+  +pc() {
+    &__worksitem{
+      width: calc(33% - 5px);
+    }
+  }
+}
