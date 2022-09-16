@@ -18,8 +18,12 @@
           ul.c-modal__cats
             li.c-modal__cat(v-for="c in fmodal.cats") {{c}}
           .c-modal__desc(v-if="fmodal.desc") 
-              h3.c-modal__desctit comment
-              .c-modal__comment {{fmodal.desc}}
+            h3.c-modal__desctit comment
+            .c-modal__comment {{fmodal.desc}}
+          .c-modal__github(v-if="fmodal.github")
+            a(:href="fmodal.github").c-modal__abtn.u-a
+              include ../assets/icon/icon-github.svg
+              | github
           .c-modal__closebtnwrap
             .c-modal__closebtn(@click='modalclose') close
         .c-modal__img

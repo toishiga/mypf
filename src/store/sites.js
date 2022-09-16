@@ -1,6 +1,15 @@
 const sites = {
   site: [
     {
+      "id": 9,
+      "tit": "MYPF",
+      "url": "http://toishiga.github.io/mypf",
+      "cats": ["html","css","js"],
+      "img": "mypf",
+      "desc": "this page",
+      "github":"https://github.com/toishiga/mypf"
+    },
+    {
       "id": 8,
       "tit": "数理女子",
       "url": "http://www.suri-joshi.jp/",
